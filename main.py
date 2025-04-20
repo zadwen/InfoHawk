@@ -1,6 +1,6 @@
 import inquirer
 from rich.console import Console
-from modules import usernames, emailintel, phonelookup, domainrecon, socialscan, leaksearch
+from modules import usernames, emailintel, phonelookup, domainrecon, socialscan, leaksearch, holehe_check
 
 console = Console()
 
@@ -18,6 +18,7 @@ def main():
                 "4. Domain & IP Recon",
                 "5. Social Media Scanner",
                 "6. Leak & Pastebin Search",
+                "7. Email Usage Check (Holehe)",
                 "0. Exit"
             ],
         ),
@@ -38,6 +39,8 @@ def main():
         socialscan.run()
     elif choice.startswith("6"):
         leaksearch.run()
+    elif choice.startswith("7"):
+        holehe_check.run()
     else:
         console.print("Goodbye! 👋")
 
