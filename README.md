@@ -1,7 +1,7 @@
 
-# 🦅 InfoHawk v3.2 – OSINT Intelligence Suite
+![InfoHawk Project](project.png)
 
-![InfoHawk Demo](project.png)
+# 🦅 InfoHawk v3.2 – OSINT Intelligence Suite
 
 > A powerful and easy-to-use OSINT platform for cybersecurity professionals and law enforcement.
 
@@ -30,7 +30,7 @@ chmod +x run.sh
 ./run.sh
 ```
 
-Then open: `http://localhost:8501`
+Then open: [http://localhost:8501](http://localhost:8501)
 
 ---
 
@@ -65,7 +65,5 @@ InfoHawk/
 
 ### 🧠 Author
 
-**Made with ❤️ by Zadwen**  
+Made with ❤️ by **Zadwen**  
 Cybersecurity Researcher | OSINT Enthusiast
-
----
