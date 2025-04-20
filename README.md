@@ -1,4 +1,6 @@
-![InfoHawk Project](project.png)
+![InfoHawk Project](assets/project.png)
+
+
 
 # 🦅 InfoHawk v3.2 – OSINT Intelligence Suite
 
