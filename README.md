@@ -1,4 +1,9 @@
-![InfoHawk Demo](project.png)
+<p align="center">
+  <img src="project.png" alt="InfoHawk by Zadwen" width="600"/>
+  <br/>
+  <strong>by Zadwen</strong>
+</p>
+
 
 # InfoHawk 🦅
 
