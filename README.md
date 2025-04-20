@@ -1,3 +1,5 @@
+![InfoHawk Demo](project.png)
+
 # InfoHawk 🦅 – OSINT Intelligence Suite
 
 **By Zadwen**  
