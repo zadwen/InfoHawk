@@ -1,7 +1,8 @@
+![InfoHawk Project](project.png)
 
 # 🦅 InfoHawk v3.2 – OSINT Intelligence Suite
 
-![InfoHawk Demo](project.png)
+
 
 > A powerful and easy-to-use OSINT platform for cybersecurity professionals and law enforcement.
 
