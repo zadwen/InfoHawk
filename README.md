@@ -22,8 +22,31 @@
 
 ### ⚙️ How to Use InfoHawk
 
+
 ```bash
 cd InfoHawk
 pip install -r requirements.txt --break-system-packages
 chmod +x run.sh
 ./run.sh
+
+api_key = "your_actual_api_key_here"
+InfoHawk/
+├── sherlock/                # Sherlock project (username scan)
+├── assets/                  # Screenshots & logo
+├── modules/                 # Functional logic per tool
+├── app.py                   # Streamlit GUI
+├── main.py                  # Core logic handler
+├── autosave.py              # Save results automatically
+├── requirements.txt         # Python dependencies
+├── run.sh                   # Launcher
+└── README.md                # You’re reading this
+
+🧠 Author
+Made with ❤️ by Zadwen
+Cybersecurity Researcher | OSINT Enthusiast
+Building tools to make investigations better 🚔🕵️‍♂️
+
+For updates, features, and contributions – stay tuned on GitHub.com/zadwen
+
+
+
