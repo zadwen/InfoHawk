@@ -1,5 +1,4 @@
-
-![InfoHawk Project](project.png)
+![InfoHawk Project](assets/project.png)
 
 # 🦅 InfoHawk v3.2 – OSINT Intelligence Suite
 
@@ -28,42 +27,3 @@ cd InfoHawk
 pip install -r requirements.txt --break-system-packages
 chmod +x run.sh
 ./run.sh
-```
-
-Then open: [http://localhost:8501](http://localhost:8501)
-
----
-
-### 🔐 Add Your HIBP API Key
-
-In `main.py`, edit this line:
-
-```python
-api_key = "your_actual_api_key_here"
-```
-
-You can get one from: [https://haveibeenpwned.com/API/Key](https://haveibeenpwned.com/API/Key)
-
----
-
-### 📁 Folder Structure
-
-```
-InfoHawk/
-├── sherlock/                # Sherlock project
-├── assets/                  # Image, screenshots
-├── modules/                 # Extra tool functions
-├── app.py                   # Streamlit dashboard
-├── main.py                  # Tool logic
-├── autosave.py              # Save search history
-├── requirements.txt
-├── run.sh
-└── README.md
-```
-
----
-
-### 🧠 Author
-
-Made with ❤️ by **Zadwen**  
-Cybersecurity Researcher | OSINT Enthusiast
