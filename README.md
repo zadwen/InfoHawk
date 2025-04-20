@@ -1,3 +1,5 @@
+![InfoHawk Demo](project.png)
+
 # InfoHawk 🦅
 
 InfoHawk is a simplified yet powerful OSINT (Open Source Intelligence) tool designed for cybersecurity students and professionals. It brings together essential recon tools in one intuitive CLI interface, making information gathering fast and accessible.
