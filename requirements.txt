@@ -1,5 +1,4 @@
-rich
-inquirer
+streamlit
 requests
-sh
-argparse
+inquirer
+rich
