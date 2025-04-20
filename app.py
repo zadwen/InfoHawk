@@ -17,40 +17,72 @@ mode = st.sidebar.selectbox("Choose OSINT Module", [
 if mode == "Username Discovery (Sherlock)":
     username = st.text_input("Enter username")
     if st.button("Search Username"):
-        subprocess.run(["python3", "sherlock/sherlock.py", username])
-        st.success("✅ Sherlock run complete.")
+        try:
+            result = subprocess.getoutput(f"python3 sherlock/sherlock.py {username}")
+            if "No usernames found" in result or not result.strip():
+                st.warning("No usernames found on target platforms.")
+            else:
+                st.success("✅ Username discovery complete:")
+                st.code(result)
+        except Exception as e:
+            st.error(f"❌ Error: {e}")
 
 elif mode == "Phone Lookup (PhoneInfoga)":
     number = st.text_input("Enter phone number")
     if st.button("Run PhoneInfoga"):
-        subprocess.run(["phoneinfoga", "scan", "-n", number])
-        st.success("✅ PhoneInfoga run complete.")
+        try:
+            result = subprocess.getoutput(f"phoneinfoga scan -n {number}")
+            if not result.strip():
+                st.warning("No phone information found.")
+            else:
+                st.success("✅ Phone number scan complete:")
+                st.code(result)
+        except Exception as e:
+            st.error(f"❌ Error: {e}")
 
 elif mode == "Email Breach Check (HIBP)":
     email = st.text_input("Enter target email:")
     if st.button("Check Breaches"):
-        api_key = "7eb79f8cbaf84d768b553c389df93a65"  # <- Your provided key
-        headers = {
-            "User-Agent": "InfoHawk",
-            "hibp-api-key": api_key
-        }
-        url = f"https://haveibeenpwned.com/api/v3/breachedaccount/{email}"
-        r = requests.get(url, headers=headers)
-        if r.status_code == 200:
-            st.success(f"✅ Found breaches: {[b['Name'] for b in r.json()]}")
-        elif r.status_code == 404:
-            st.info("✅ No breach found.")
-        else:
-            st.error(f"Error {r.status_code}: Check API key or email format.")
+        try:
+            api_key = "7eb79f8cbaf84d768b553c389df93a65"
+            headers = {
+                "User-Agent": "InfoHawk",
+                "hibp-api-key": api_key
+            }
+            url = f"https://haveibeenpwned.com/api/v3/breachedaccount/{email}"
+            r = requests.get(url, headers=headers)
+            if r.status_code == 200:
+                data = r.json()
+                if data:
+                    st.success(f"✅ {email} found in the following breaches:")
+                    for b in data:
+                        st.write(f"- {b['Name']} ({b['BreachDate']})")
+                else:
+                    st.info("✅ No breach data found.")
+            elif r.status_code == 404:
+                st.info("✅ No breaches found.")
+            elif r.status_code == 401:
+                st.error("❌ Invalid HIBP API Key.")
+            else:
+                st.error(f"❌ HIBP Error: {r.status_code}")
+        except Exception as e:
+            st.error(f"❌ Exception: {e}")
 
 elif mode == "Leak Dump Search (Simulated)":
-    email = st.text_input("Enter term to search in dumps:")
+    term = st.text_input("Enter keyword to search in dumps")
     if st.button("Search Dumps"):
-        found = []
-        for leak_file in ["combo-list.txt", "linkedin_leak.txt"]:
-            if email in leak_file:
-                found.append(leak_file)
-        for match in found:
-            st.success(f"Found in {match}")
-        if not found:
-            st.warning("No results found in local dumps.")
+        matches = []
+        try:
+            with open("modules/leaks.txt", "r") as f:
+                lines = f.readlines()
+                for line in lines:
+                    if term.lower() in line.lower():
+                        matches.append(line.strip())
+            if matches:
+                st.success(f"✅ Found {len(matches)} matching records:")
+                for m in matches:
+                    st.code(m)
+            else:
+                st.warning("No matches found in leak database.")
+        except FileNotFoundError:
+            st.error("Leak file not found: modules/leaks.txt")
