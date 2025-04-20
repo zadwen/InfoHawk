@@ -1,26 +1,26 @@
+
 ![InfoHawk Project](assets/project.png)
 
-# 🦅 InfoHawk v3.2 – OSINT Intelligence Suite
+# 🦅 InfoHawk v3.2 – OSINT Intelligence Suite  
+**Crafted with passion by Zadwen**
 
-> A powerful and easy-to-use OSINT platform for cybersecurity professionals and law enforcement.
-
-**Fully working OSINT toolkit for cyber investigations**  
-**Crafted by Zadwen**
+> A powerful and easy-to-use OSINT platform built for cybersecurity professionals, students, and law enforcement to investigate digital threats, fake accounts, breaches, and more.
 
 ---
 
-### 🧰 Tools Included (Pre-installed)
+### 🧰 Included Tools (Fully Integrated)
 
-- ✅ Sherlock (fast subprocess-based call)
-- ✅ PhoneInfoga (precompiled CLI v2.11.0)
-- ✅ HIBP Breach Check (live via your API key)
-- ✅ Leak Search (combo/LinkedIn dumps)
-- ✅ Pastebin Monitor (basic Google dork emulation)
-- ✅ Holehe (check email usage on services)
+- ✅ **Sherlock** – Username lookup across 300+ platforms (subprocess-based, fast)
+- ✅ **PhoneInfoga** – Phone number reconnaissance (CLI binary v2.11.0)
+- ✅ **Holehe** – Detect email usage on websites
+- ✅ **HIBP** – Breach check via HaveIBeenPwned API (live)
+- ✅ **WHOIS / nslookup** – Domain and IP recon
+- ✅ **Leak Search** – Look inside known credential dumps (LinkedIn combos etc.)
+- ✅ **Pastebin Monitor** – Scrape paste dumps via dork-style search
 
 ---
 
-### ⚙️ How to Run
+### ⚙️ How to Use InfoHawk
 
 ```bash
 cd InfoHawk
