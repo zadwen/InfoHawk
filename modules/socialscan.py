@@ -1,2 +1,2 @@
-def run():
-    print("[SocialScan] This module would gather public info from social media.")
+"""Compatibility adapter for the username investigation feature."""
+from modules.usernames import run

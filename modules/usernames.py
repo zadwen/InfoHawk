@@ -1,2 +1,5 @@
-def run():
-    print("[Usernames] This module would call Sherlock or Maigret to discover usernames.")
+from modules.runners import run_tool
+
+
+def run(target):
+    return run_tool('sherlock', target)
